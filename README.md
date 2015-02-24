@@ -6,7 +6,6 @@ As developers, we know how frustrating it is to research complex algorithms. Oft
 Please feel free to add to this library. I only ask that you follow these guidlines:
 - Follow this format.
 - Be current with the latest OpenPGP.js release.
-- Be patient while I learn how to format this readme, lol.
 
 ####Generate Keypair
 ```javascript
@@ -34,7 +33,7 @@ Please feel free to add to this library. I only ask that you follow these guidli
 ```javascript
 /**
  * Encrypt a message using the recipient's public key.
- * @param  {pubkey} String -Encrypted ASCII Armored public key.
+ * @param  {pubkey} String - Encrypted ASCII Armored public key.
  * @param  {message} String - Your message to the recipient.
  * @return {pgpMessage} String - Encrypted ASCII Armored message.
  */
