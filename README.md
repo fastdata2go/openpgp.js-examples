@@ -7,6 +7,7 @@ Please feel free to add to this library. I only ask that you follow these guidli
 - Follow this format.
 - Be current with the latest OpenPGP.JS release.
 
+[CODE]
 /**
  * Generate Keypair
  * @param  {numBits} Integer - Any multiple of 1024. 2048 is recommended.
@@ -23,6 +24,8 @@ function keygen(numBits, userId, passphrase) {
     });
     return key;
 }
+[/CODE]
+
 /**
  * Encrypt a message using the recipient's public key.
  * @param  {pubkey} String -Encrypted ASCII Armored public key.
