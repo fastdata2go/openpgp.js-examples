@@ -1,12 +1,23 @@
-# openpgp.js-examples
-A place to share your openpgp.js examples with comments to help build this into the largest library of its kind.
+# crypto.js-examples
+A place to share your crypto.js examples with comments to help build this into the largest library of its kind.
 
 As developers, we know how frustrating it is to research complex algorithms. Often, you have to filter through many sites to find what you need. Well, we'd like to fix that. I'm starting off this library with some routines that I use to get things started. 
 
 Please feel free to add to this library. I only ask that you follow these guidlines:
 - Follow this format.
-- Be current with the latest OpenPGP.JS release.
+- Be current with the latest crypto.JS release.
 - Be patient while I learn how to format this readme, lol.
+
+####Javascript linked files:
+```javascript
+scripts/cryptojs/jquery.min.js
+scripts/cryptojs/components/core-min.js
+scripts/cryptojs/components/enc-utf16-min.js
+scripts/cryptojs/components/enc-base64-min.js
+scripts/cryptojs/rollups/aes.js
+scripts/cryptojs/rollups/sha3.js
+```
+
 
 
 ####Generate Keypair
