@@ -6,6 +6,7 @@ As developers, we know how frustrating it is to research complex algorithms. Oft
 Please feel free to add to this library. I only ask that you follow these guidlines:
 - Follow this format.
 - Be current with the latest OpenPGP.JS release.
+- Be patient while I learn how to format this readme.
 
 
 ##Generate Keypair
