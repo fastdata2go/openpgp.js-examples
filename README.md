@@ -7,31 +7,35 @@ Please feel free to add to this library. I only ask that you follow these guidli
 - Follow this format.
 - Be current with the latest OpenPGP.JS release.
 
-#Generate Keypair
->/**
- * Generate Keypair
- * @param  {numBits} Integer - Any multiple of 1024. 2048 is recommended.
- * @param  {userid} String - should be like: Alice Mayfield <amayfield@quantum.com>
- * @param  {passphrase} String - password should be a 4-5 word sentence (20+ chars)
- * @return {key} String - Encrypted ASCII armored keypair (contains both Private and Public keys)
- */
+
+##Generate Keypair
+
+<div>
+* Generate Keypair
+* @param  {numBits} Integer - Any multiple of 1024. 2048 is recommended.
+* @param  {userid} String - should be like: Alice Mayfield <amayfield@quantum.com>
+* @param  {passphrase} String - password should be a 4-5 word sentence (20+ chars)
+* @return {key} String - Encrypted ASCII armored keypair (contains both Private and Public keys)
+
+
+<div>
 function keygen(numBits, userId, passphrase) {
     var openpgp = window.openpgp;
     var key = openpgp.generateKeyPair({
-        numBits: numBits,
-        userId: userId,
-        passphrase: passphrase
+    numBits: numBits,
+    userId: userId,
+    passphrase: passphrase
     });
     return key;
-}
+    }
 
-
->/**
+<div>
  * Encrypt a message using the recipient's public key.
  * @param  {pubkey} String -Encrypted ASCII Armored public key.
  * @param  {message} String - Your message to the recipient.
  * @return {pgpMessage} String - Encrypted ASCII Armored message.
- */
+ 
+<div>
 function encrypt_message(pubkey, message) {
     var openpgp = window.openpgp;
     var key = pubkey;
@@ -48,6 +52,7 @@ function encrypt_message(pubkey, message) {
  * @param  {encoded_message} String - Your message from the recipient.
  * @return {decrypted} String - Decrypted message.
  */
+
 function decrypt_message(pubkey, privkey, passphrase, encoded_message) {
     var openpgp = window.openpgp;
     var privKeys = openpgp.key.readArmored(privkey);
@@ -58,6 +63,7 @@ function decrypt_message(pubkey, privkey, passphrase, encoded_message) {
     var decrypted = openpgp.decryptMessage(privKey, message);
     return decrypted;
 }
+
 >/**
  * Sign a message using your private key.
  * @param  {pubkey} String - Your recipient's public key.
@@ -66,6 +72,7 @@ function decrypt_message(pubkey, privkey, passphrase, encoded_message) {
  * @param  {message} String - Your message from the recipient.
  * @return {signed} String - Signed message.
  */
+
 function sign_message(pubkey, privkey, passphrase, message){
 	var openpgp = window.openpgp;
 	var priv = openpgp.key.readArmored(privkey);
@@ -83,6 +90,7 @@ function sign_message(pubkey, privkey, passphrase, message){
  * @param  {signed_message} String - Your signed message from the recipient.
  * @return {signed} Boolean - True (1) is a valid signed message.
  */
+
 function verify_signature(pubkey, privkey, passphrase, signed_message) {
     var openpgp = window.openpgp;
     var privKeys = openpgp.key.readArmored(privkey);
