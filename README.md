@@ -130,8 +130,10 @@ function verify_signature(pubkey, privkey, passphrase, signed_message) {
 ```javascript
 HTML5 supports offline storage in the browser.
 One possible use is key storage. For non-IE storage, use this format:
+
 localStorage.setItem("companyname.privkey", privkey); 
 localStorage.setItem("companyname.pubkey", key.publicKeyArmored);
+
 localStorage.getItem("companyname.privkey"); 
 localStorage.getItem("companyname.pubkey");
 ```
