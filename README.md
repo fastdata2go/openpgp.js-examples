@@ -7,8 +7,8 @@ Please feel free to add to this library. I only ask that you follow these guidli
 - Follow this format.
 - Be current with the latest OpenPGP.JS release.
 
-[CODE]
-/**
+#Generate Keypair
+>/**
  * Generate Keypair
  * @param  {numBits} Integer - Any multiple of 1024. 2048 is recommended.
  * @param  {userid} String - should be like: Alice Mayfield <amayfield@quantum.com>
@@ -24,9 +24,9 @@ function keygen(numBits, userId, passphrase) {
     });
     return key;
 }
-[/CODE]
 
-/**
+
+>/**
  * Encrypt a message using the recipient's public key.
  * @param  {pubkey} String -Encrypted ASCII Armored public key.
  * @param  {message} String - Your message to the recipient.
@@ -39,7 +39,8 @@ function encrypt_message(pubkey, message) {
     var pgpMessage = openpgp.encryptMessage(publicKey.keys, message);
     return pgpMessage;
 }
-/**
+
+>/**
  * Decrypt a message using your private key.
  * @param  {pubkey} String - Your recipient's public key.
  * @param  {privkey} String - Your private key.
@@ -57,7 +58,7 @@ function decrypt_message(pubkey, privkey, passphrase, encoded_message) {
     var decrypted = openpgp.decryptMessage(privKey, message);
     return decrypted;
 }
-/**
+>/**
  * Sign a message using your private key.
  * @param  {pubkey} String - Your recipient's public key.
  * @param  {privkey} String - Your private key.
@@ -74,7 +75,7 @@ function sign_message(pubkey, privkey, passphrase, message){
 	var signed = openpgp.signClearMessage(priv.keys, message);
 	return signed;  
 	}
-/**
+>/**
  * Sign a message using your private key.
  * @param  {pubkey} String - Your recipient's public key.
  * @param  {privkey} String - Your private key.
