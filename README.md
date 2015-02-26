@@ -124,6 +124,32 @@ function verify_signature(pubkey, privkey, passphrase, signed_message) {
 ```
 
 
+#### Public Key Length
+```javascript
+/**
+ * Determines public key size (1024, 2048...)
+ * @param  {data} String - Your recipient's Encrypted ASCII Armored public key.
+ * @return {size} Integer - Length of the public key.
+ */
+
+function get_publickey_length(data) {
+    var publicKey = openpgp.key.readArmored(data);
+    var publicKeyPacket = publicKey.keys[0].primaryKey;
+    if (publicKeyPacket !== null) {
+        strength = getBitLength(publicKeyPacket);
+    }
+
+    function getBitLength(publicKeyPacket) {
+        var size = -1;
+        if (publicKeyPacket.mpi.length > 0) {
+            size = (publicKeyPacket.mpi[0].byteLength() * 8);
+        }
+        return size;
+    }
+}
+```
+
+
 ####HTML5 Storage
 ```javascript
 HTML5 supports offline storage in the browser.
